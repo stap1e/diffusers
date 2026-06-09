@@ -1,0 +1,92 @@
+[
+  {
+    "id": "temporal_001",
+    "category": "temporal_consistency",
+    "prompt": "A red ceramic mug sits on a wooden table while the camera slowly orbits around it.",
+    "prompt_zh": "一个红色陶瓷马克杯放在木桌上，镜头缓慢绕着它旋转。",
+    "expected_objects": ["red ceramic mug", "wooden table"],
+    "expected_motion": "slow camera orbit with stable object identity",
+    "known_failure_modes": ["identity_drift", "texture_flicker", "object_disappearance", "geometry_distortion"]
+  },
+  {
+    "id": "temporal_002",
+    "category": "temporal_consistency",
+    "prompt": "A woman wearing a blue jacket walks from left to right along a quiet city street.",
+    "prompt_zh": "一位穿蓝色夹克的女子沿着安静的城市街道从左向右走。",
+    "expected_objects": ["woman", "blue jacket", "city street"],
+    "expected_motion": "left-to-right walking with stable clothing and identity",
+    "known_failure_modes": ["identity_drift", "clothing_color_change", "limb_distortion", "wrong_direction"]
+  },
+  {
+    "id": "temporal_003",
+    "category": "temporal_consistency",
+    "prompt": "A white dog runs across a green field while holding a yellow frisbee in its mouth.",
+    "prompt_zh": "一只白狗叼着黄色飞盘跑过绿色草地。",
+    "expected_objects": ["white dog", "yellow frisbee", "green field"],
+    "expected_motion": "continuous running while keeping the frisbee in the mouth",
+    "known_failure_modes": ["object_disappearance", "animal_deformation", "frisbee_duplication", "motion_freeze"]
+  },
+  {
+    "id": "temporal_004",
+    "category": "temporal_consistency",
+    "prompt": "A close-up of a chef slicing a cucumber into even pieces on a cutting board.",
+    "prompt_zh": "厨师在砧板上把黄瓜切成均匀的小片，画面为近景。",
+    "expected_objects": ["chef hands", "knife", "cucumber", "cutting board"],
+    "expected_motion": "repeated slicing with accumulating cucumber pieces",
+    "known_failure_modes": ["hand_deformation", "knife_disappearance", "wrong_action_order", "object_count_inconsistency"]
+  },
+  {
+    "id": "temporal_005",
+    "category": "temporal_consistency",
+    "prompt": "A yellow taxi drives past a row of identical white buildings on a rainy street.",
+    "prompt_zh": "一辆黄色出租车驶过雨中街道旁一排相同的白色建筑。",
+    "expected_objects": ["yellow taxi", "white buildings", "rainy street"],
+    "expected_motion": "taxi motion with stable background structure",
+    "known_failure_modes": ["background_warping", "vehicle_shape_drift", "texture_flicker", "wrong_motion_speed"]
+  },
+  {
+    "id": "temporal_006",
+    "category": "temporal_consistency",
+    "prompt": "A black bicycle leans against a brick wall while leaves move in the wind nearby.",
+    "prompt_zh": "一辆黑色自行车靠在砖墙上，旁边的树叶随风摆动。",
+    "expected_objects": ["black bicycle", "brick wall", "leaves"],
+    "expected_motion": "static bicycle and wall with subtle leaf motion",
+    "known_failure_modes": ["static_object_drift", "background_flicker", "unwanted_camera_motion", "bicycle_deformation"]
+  },
+  {
+    "id": "temporal_007",
+    "category": "temporal_consistency",
+    "prompt": "A train passes through a snowy station while the camera remains fixed.",
+    "prompt_zh": "一列火车驶过下雪的车站，镜头保持固定。",
+    "expected_objects": ["train", "snowy station"],
+    "expected_motion": "train moves through a stable fixed-camera scene",
+    "known_failure_modes": ["camera_inconsistency", "train_length_change", "background_warping", "motion_stutter"]
+  },
+  {
+    "id": "temporal_008",
+    "category": "temporal_consistency",
+    "prompt": "A person with curly hair turns their head slowly toward the camera.",
+    "prompt_zh": "一个卷发的人慢慢转头看向镜头。",
+    "expected_objects": ["person", "curly hair", "face"],
+    "expected_motion": "slow head turn with stable face and hair identity",
+    "known_failure_modes": ["face_identity_drift", "hair_flicker", "facial_distortion", "motion_jump"]
+  },
+  {
+    "id": "temporal_009",
+    "category": "temporal_consistency",
+    "prompt": "A green plant in a white pot sits on a windowsill while sunlight shifts slightly.",
+    "prompt_zh": "一株绿色植物在白色花盆里放在窗台上，阳光略微变化。",
+    "expected_objects": ["green plant", "white pot", "windowsill"],
+    "expected_motion": "mostly static scene with subtle lighting change",
+    "known_failure_modes": ["object_morphing", "pot_color_change", "lighting_flicker", "unwanted_motion"]
+  },
+  {
+    "id": "temporal_010",
+    "category": "temporal_consistency",
+    "prompt": "A silver watch rotates slowly on a black turntable under studio lighting.",
+    "prompt_zh": "一块银色手表在黑色转台上缓慢旋转，处于棚拍灯光下。",
+    "expected_objects": ["silver watch", "black turntable"],
+    "expected_motion": "smooth turntable rotation with stable watch details",
+    "known_failure_modes": ["detail_flicker", "geometry_distortion", "rotation_inconsistency", "object_duplication"]
+  }
+]

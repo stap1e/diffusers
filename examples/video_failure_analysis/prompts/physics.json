@@ -1,0 +1,92 @@
+[
+  {
+    "id": "physics_001",
+    "category": "physics",
+    "prompt": "A glass ball falls from the edge of a wooden table, hits the floor, and bounces twice before stopping.",
+    "prompt_zh": "一个玻璃球从木桌边缘掉下，撞到地板后弹起两次并停下。",
+    "expected_objects": ["glass ball", "wooden table", "floor"],
+    "expected_motion": "falling, impact, two bounces, rest",
+    "known_failure_modes": ["floating", "no_collision_response", "floor_penetration", "object_deformation"]
+  },
+  {
+    "id": "physics_002",
+    "category": "physics",
+    "prompt": "Water is poured from a clear bottle into a transparent cup until the cup is half full.",
+    "prompt_zh": "水从透明瓶子倒入透明杯子，直到杯子半满。",
+    "expected_objects": ["bottle", "water", "transparent cup"],
+    "expected_motion": "continuous liquid stream filling the cup",
+    "known_failure_modes": ["liquid_discontinuity", "water_floating", "wrong_container_interaction", "missing_fill_level"]
+  },
+  {
+    "id": "physics_003",
+    "category": "physics",
+    "prompt": "A stack of five wooden blocks is gently pushed from the side and collapses onto the table.",
+    "prompt_zh": "一叠五块木积木被从侧面轻轻推动，然后倒在桌面上。",
+    "expected_objects": ["five wooden blocks", "table"],
+    "expected_motion": "side push causing a physically plausible collapse",
+    "known_failure_modes": ["blocks_merging", "no_contact_force", "unnatural_rotation", "table_penetration"]
+  },
+  {
+    "id": "physics_004",
+    "category": "physics",
+    "prompt": "A basketball arcs through the air, hits the rim, and falls into the hoop.",
+    "prompt_zh": "一个篮球在空中划出弧线，碰到篮筐后落入篮网。",
+    "expected_objects": ["basketball", "rim", "hoop"],
+    "expected_motion": "parabolic arc, rim contact, downward fall",
+    "known_failure_modes": ["non_parabolic_motion", "missing_contact", "ball_size_change", "hoop_penetration"]
+  },
+  {
+    "id": "physics_005",
+    "category": "physics",
+    "prompt": "A metal spoon drops into a bowl of soup and creates small ripples on the surface.",
+    "prompt_zh": "一个金属勺子掉进汤碗里，并在表面激起小波纹。",
+    "expected_objects": ["metal spoon", "bowl", "soup", "ripples"],
+    "expected_motion": "fall, splash or ripples, spoon partially submerged",
+    "known_failure_modes": ["no_fluid_response", "spoon_floating", "object_penetration", "missing_ripples"]
+  },
+  {
+    "id": "physics_006",
+    "category": "physics",
+    "prompt": "A paper airplane glides forward, slowly loses height, and lands on the grass.",
+    "prompt_zh": "一架纸飞机向前滑翔，慢慢降低高度，最后落在草地上。",
+    "expected_objects": ["paper airplane", "grass"],
+    "expected_motion": "forward glide with gradual descent and landing",
+    "known_failure_modes": ["hovering", "teleportation", "shape_deformation", "missing_landing"]
+  },
+  {
+    "id": "physics_007",
+    "category": "physics",
+    "prompt": "A candle flame flickers when a person waves a hand near it, but the candle stays upright.",
+    "prompt_zh": "有人在蜡烛旁挥手，烛焰摇曳但蜡烛保持直立。",
+    "expected_objects": ["candle", "flame", "hand"],
+    "expected_motion": "hand wave causes flame flicker without moving the candle",
+    "known_failure_modes": ["flame_detachment", "wrong_causal_response", "candle_deformation", "missing_flicker"]
+  },
+  {
+    "id": "physics_008",
+    "category": "physics",
+    "prompt": "A toy car rolls down a small ramp and continues moving across the floor before slowing down.",
+    "prompt_zh": "一辆玩具车从小斜坡上滚下，继续在地板上前进，然后逐渐减速。",
+    "expected_objects": ["toy car", "ramp", "floor"],
+    "expected_motion": "downhill acceleration followed by floor motion and deceleration",
+    "known_failure_modes": ["constant_speed", "ramp_penetration", "wrong_direction", "motion_freeze"]
+  },
+  {
+    "id": "physics_009",
+    "category": "physics",
+    "prompt": "A cloth napkin is lifted from one corner and folds naturally under gravity.",
+    "prompt_zh": "一块布餐巾从一个角被提起，并在重力下自然折叠。",
+    "expected_objects": ["cloth napkin", "hand"],
+    "expected_motion": "corner lift with flexible cloth deformation",
+    "known_failure_modes": ["rigid_cloth", "cloth_tearing", "floating_fabric", "hand_cloth_misalignment"]
+  },
+  {
+    "id": "physics_010",
+    "category": "physics",
+    "prompt": "An egg rolls off a kitchen counter, falls, and breaks on the floor with the shell spreading outward.",
+    "prompt_zh": "一个鸡蛋从厨房台面滚落，掉到地板上并破裂，蛋壳向外散开。",
+    "expected_objects": ["egg", "kitchen counter", "floor", "broken shell"],
+    "expected_motion": "rolling, falling, impact, breaking",
+    "known_failure_modes": ["egg_not_breaking", "unrealistic_fragment_motion", "floor_penetration", "object_identity_drift"]
+  }
+]

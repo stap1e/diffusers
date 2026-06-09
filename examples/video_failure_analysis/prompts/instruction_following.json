@@ -1,0 +1,102 @@
+[
+  {
+    "id": "if_001",
+    "category": "instruction_following",
+    "prompt": "A red cube moves to the left of a blue sphere and stops there.",
+    "prompt_zh": "一个红色立方体移动到蓝色球体的左边并停在那里。",
+    "expected_objects": ["red cube", "blue sphere"],
+    "expected_motion": "red cube moves to the left side of the blue sphere",
+    "expected_constraints": ["red cube", "blue sphere", "left of", "stops"],
+    "known_failure_modes": ["wrong_color", "wrong_spatial_relation", "wrong_object", "motion_freeze"]
+  },
+  {
+    "id": "if_002",
+    "category": "instruction_following",
+    "prompt": "A man picks up a cup with his right hand and places it on a shelf.",
+    "prompt_zh": "一个男人用右手拿起杯子并把它放到架子上。",
+    "expected_objects": ["man", "cup", "shelf", "right hand"],
+    "expected_motion": "right-hand pickup followed by placing on shelf",
+    "expected_constraints": ["right hand", "pickup", "place on shelf"],
+    "known_failure_modes": ["wrong_hand", "missing_pickup", "missing_final_state", "object_hand_misalignment"]
+  },
+  {
+    "id": "if_003",
+    "category": "instruction_following",
+    "prompt": "Three birds fly from right to left across a cloudy sky.",
+    "prompt_zh": "三只鸟从右向左飞过多云的天空。",
+    "expected_objects": ["three birds", "cloudy sky"],
+    "expected_motion": "three birds moving right to left",
+    "expected_constraints": ["count three", "right-to-left direction", "cloudy sky"],
+    "known_failure_modes": ["wrong_count", "wrong_direction", "object_duplication", "object_disappearance"]
+  },
+  {
+    "id": "if_004",
+    "category": "instruction_following",
+    "prompt": "A green car stops at a red traffic light, then turns right after the light turns green.",
+    "prompt_zh": "一辆绿色汽车在红灯前停下，等灯变绿后右转。",
+    "expected_objects": ["green car", "traffic light"],
+    "expected_motion": "stop at red light, light changes green, car turns right",
+    "expected_constraints": ["green car", "red then green light", "stop before turn", "right turn"],
+    "known_failure_modes": ["wrong_color", "wrong_action_order", "missing_light_change", "wrong_turn_direction"]
+  },
+  {
+    "id": "if_005",
+    "category": "instruction_following",
+    "prompt": "A small black cat jumps over a large white dog, then sits beside a red ball.",
+    "prompt_zh": "一只小黑猫跳过一只大白狗，然后坐在一个红球旁边。",
+    "expected_objects": ["small black cat", "large white dog", "red ball"],
+    "expected_motion": "cat jumps over dog, then sits beside ball",
+    "expected_constraints": ["cat black", "dog white", "cat over dog", "cat beside red ball"],
+    "known_failure_modes": ["wrong_action_order", "wrong_spatial_relation", "object_merge", "wrong_color"]
+  },
+  {
+    "id": "if_006",
+    "category": "instruction_following",
+    "prompt": "A robot arm picks up the red block and places it on top of the blue block.",
+    "prompt_zh": "一个机械臂拿起红色积木并把它放在蓝色积木上方。",
+    "expected_objects": ["robot arm", "red block", "blue block"],
+    "expected_motion": "robot arm stacks red block on blue block",
+    "expected_constraints": ["red on top", "blue below", "robot arm interaction"],
+    "known_failure_modes": ["wrong_stack_order", "missing_contact", "wrong_object", "object_penetration"]
+  },
+  {
+    "id": "if_007",
+    "category": "instruction_following",
+    "prompt": "A woman opens a yellow umbrella before stepping into the rain.",
+    "prompt_zh": "一位女士先打开一把黄色雨伞，然后走进雨中。",
+    "expected_objects": ["woman", "yellow umbrella", "rain"],
+    "expected_motion": "umbrella opens before entering rain",
+    "expected_constraints": ["yellow umbrella", "opens first", "rain afterward"],
+    "known_failure_modes": ["wrong_action_order", "wrong_color", "missing_rain", "umbrella_deformation"]
+  },
+  {
+    "id": "if_008",
+    "category": "instruction_following",
+    "prompt": "Two candles are lit one after another from left to right.",
+    "prompt_zh": "两支蜡烛从左到右依次被点燃。",
+    "expected_objects": ["two candles", "flames"],
+    "expected_motion": "left candle lights first, right candle lights second",
+    "expected_constraints": ["count two", "left-to-right order", "lit sequentially"],
+    "known_failure_modes": ["wrong_count", "wrong_action_order", "missing_flame", "simultaneous_lighting"]
+  },
+  {
+    "id": "if_009",
+    "category": "instruction_following",
+    "prompt": "A blue book is placed under a white laptop on a desk.",
+    "prompt_zh": "一本蓝色书被放在桌上一台白色笔记本电脑的下面。",
+    "expected_objects": ["blue book", "white laptop", "desk"],
+    "expected_motion": "book placed under laptop",
+    "expected_constraints": ["blue book", "white laptop", "book under laptop"],
+    "known_failure_modes": ["wrong_spatial_relation", "wrong_color", "object_merge", "missing_final_state"]
+  },
+  {
+    "id": "if_010",
+    "category": "instruction_following",
+    "prompt": "A child draws a star first and then a circle on a sheet of paper.",
+    "prompt_zh": "一个孩子先在纸上画一颗星星，然后画一个圆圈。",
+    "expected_objects": ["child", "star", "circle", "paper"],
+    "expected_motion": "draw star first, then circle",
+    "expected_constraints": ["star before circle", "both shapes visible", "on paper"],
+    "known_failure_modes": ["wrong_action_order", "wrong_shape", "missing_shape", "drawing_drift"]
+  }
+]

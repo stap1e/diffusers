@@ -1,0 +1,50 @@
+{
+  "wan": {
+    "pipeline_class": "WanPipeline",
+    "model_path": "/data/lhy_data/models/Wan2.1-T2V-14B-Diffusers",
+    "height": 480,
+    "width": 832,
+    "num_frames": 81,
+    "num_inference_steps": 50,
+    "guidance_scale": 5.0,
+    "fps": 16,
+    "torch_dtype": "bfloat16",
+    "output_type": "pil"
+  },
+  "ltx": {
+    "pipeline_class": "LTXPipeline",
+    "model_path": "/data/lhy_data/models/LTX-Video-0.9.7-dev",
+    "height": 512,
+    "width": 704,
+    "num_frames": 161,
+    "num_inference_steps": 50,
+    "guidance_scale": 3.0,
+    "fps": 24,
+    "torch_dtype": "bfloat16",
+    "output_type": "pil"
+  },
+  "cogvideox": {
+    "pipeline_class": "CogVideoXPipeline",
+    "model_path": "/data/lhy_data/models/CogVideoX-5b",
+    "height": 480,
+    "width": 720,
+    "num_frames": 49,
+    "num_inference_steps": 50,
+    "guidance_scale": 6.0,
+    "fps": 8,
+    "torch_dtype": "bfloat16",
+    "output_type": "pil"
+  },
+  "hunyuan_video": {
+    "pipeline_class": "HunyuanVideoPipeline",
+    "model_path": "/data/lhy_data/models/HunyuanVideo-1.5",
+    "height": 512,
+    "width": 768,
+    "num_frames": 121,
+    "num_inference_steps": 40,
+    "guidance_scale": 4.0,
+    "fps": 15,
+    "torch_dtype": "bfloat16",
+    "output_type": "pil"
+  }
+}

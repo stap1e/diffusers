@@ -1,0 +1,92 @@
+[
+  {
+    "id": "interaction_001",
+    "category": "multi_object_interaction",
+    "prompt": "Two people shake hands, release their hands, and walk in opposite directions.",
+    "prompt_zh": "两个人握手，松开手，然后朝相反方向走开。",
+    "expected_objects": ["two people", "hands"],
+    "expected_motion": "handshake, release, opposite walking directions",
+    "known_failure_modes": ["hand_merge", "wrong_action_order", "identity_swap", "missing_release"]
+  },
+  {
+    "id": "interaction_002",
+    "category": "multi_object_interaction",
+    "prompt": "A dog chases a cat around a tree without catching it.",
+    "prompt_zh": "一只狗绕着树追一只猫，但没有追上。",
+    "expected_objects": ["dog", "cat", "tree"],
+    "expected_motion": "dog follows cat around tree while identities remain separate",
+    "known_failure_modes": ["animal_merge", "identity_swap", "wrong_path", "object_disappearance"]
+  },
+  {
+    "id": "interaction_003",
+    "category": "multi_object_interaction",
+    "prompt": "A person pours coffee from a pot into a mug while another person holds the mug steady.",
+    "prompt_zh": "一个人把咖啡从壶里倒进马克杯，另一个人扶稳杯子。",
+    "expected_objects": ["two people", "coffee pot", "mug", "coffee"],
+    "expected_motion": "pouring with one person holding the mug",
+    "known_failure_modes": ["role_confusion", "liquid_misalignment", "hand_object_penetration", "missing_second_person"]
+  },
+  {
+    "id": "interaction_004",
+    "category": "multi_object_interaction",
+    "prompt": "A child passes a red ball to another child, who catches it with both hands.",
+    "prompt_zh": "一个孩子把红球传给另一个孩子，另一个孩子用双手接住。",
+    "expected_objects": ["two children", "red ball", "hands"],
+    "expected_motion": "pass and two-handed catch",
+    "known_failure_modes": ["missing_catch", "ball_disappearance", "wrong_receiver", "hand_ball_misalignment"]
+  },
+  {
+    "id": "interaction_005",
+    "category": "multi_object_interaction",
+    "prompt": "A waiter places a plate of pasta in front of a seated customer at a restaurant table.",
+    "prompt_zh": "服务员把一盘意大利面放到餐厅桌前坐着的顾客面前。",
+    "expected_objects": ["waiter", "seated customer", "plate of pasta", "restaurant table"],
+    "expected_motion": "waiter places plate in front of customer",
+    "known_failure_modes": ["role_confusion", "wrong_final_position", "plate_deformation", "table_penetration"]
+  },
+  {
+    "id": "interaction_006",
+    "category": "multi_object_interaction",
+    "prompt": "A tennis player hits a ball over the net and the other player returns it.",
+    "prompt_zh": "一名网球运动员把球打过网，另一名运动员把球回击回来。",
+    "expected_objects": ["two tennis players", "tennis ball", "net", "rackets"],
+    "expected_motion": "hit over net followed by return hit",
+    "known_failure_modes": ["ball_teleportation", "wrong_action_order", "missing_return", "racket_ball_misalignment"]
+  },
+  {
+    "id": "interaction_007",
+    "category": "multi_object_interaction",
+    "prompt": "A person attaches a leash to a dog's collar and then the dog starts walking beside them.",
+    "prompt_zh": "一个人把牵引绳扣到狗项圈上，然后狗开始在他旁边走。",
+    "expected_objects": ["person", "dog", "leash", "collar"],
+    "expected_motion": "attach leash, then walk together",
+    "known_failure_modes": ["missing_attachment", "leash_discontinuity", "dog_identity_drift", "wrong_action_order"]
+  },
+  {
+    "id": "interaction_008",
+    "category": "multi_object_interaction",
+    "prompt": "A mechanic tightens a bolt on a bicycle wheel with a wrench.",
+    "prompt_zh": "一名修理工用扳手拧紧自行车轮子上的螺栓。",
+    "expected_objects": ["mechanic", "wrench", "bolt", "bicycle wheel"],
+    "expected_motion": "wrench contacts and turns bolt on bicycle wheel",
+    "known_failure_modes": ["tool_misalignment", "missing_bolt", "wheel_deformation", "wrong_object_interaction"]
+  },
+  {
+    "id": "interaction_009",
+    "category": "multi_object_interaction",
+    "prompt": "Two dancers spin around each other while keeping their hands connected.",
+    "prompt_zh": "两名舞者手牵手围绕彼此旋转。",
+    "expected_objects": ["two dancers", "connected hands"],
+    "expected_motion": "coordinated spin with connected hands",
+    "known_failure_modes": ["hand_disconnect", "body_merge", "identity_swap", "motion_stutter"]
+  },
+  {
+    "id": "interaction_010",
+    "category": "multi_object_interaction",
+    "prompt": "A bird lands on a person's outstretched hand and stays there calmly.",
+    "prompt_zh": "一只鸟落在一个人伸出的手上，并安静地停在那里。",
+    "expected_objects": ["bird", "person", "outstretched hand"],
+    "expected_motion": "bird landing on hand and remaining perched",
+    "known_failure_modes": ["missing_contact", "bird_size_change", "hand_deformation", "unrealistic_landing"]
+  }
+]

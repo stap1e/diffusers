@@ -59,26 +59,31 @@ Please refer to the [How to use Stable Diffusion in Apple Silicon](https://huggi
 
 ## Quickstart
 
-Generating outputs is super easy with 🤗 Diffusers. To generate an image from text, use the `from_pretrained` method to load any pretrained diffusion model (browse the [Hub](https://huggingface.co/models?library=diffusers&sort=downloads) for 30,000+ checkpoints):
+Generating outputs is super easy with 🤗 Diffusers. To generate an image from text, use the `from_pretrained` method with a local checkpoint directory that already exists on disk:
 
 ```python
 from diffusers import DiffusionPipeline
 import torch
 
-pipeline = DiffusionPipeline.from_pretrained("stable-diffusion-v1-5/stable-diffusion-v1-5", torch_dtype=torch.float16)
+pipeline = DiffusionPipeline.from_pretrained(
+    "/path/to/local/stable-diffusion-v1-5",
+    torch_dtype=torch.float16,
+    local_files_only=True,
+)
 pipeline.to("cuda")
 pipeline("An image of a squirrel in Picasso style").images[0]
 ```
 
-You can also dig into the models and schedulers toolbox to build your own diffusion system:
+You can also dig into the models and schedulers toolbox to build your own diffusion system from local model files:
 
 ```python
 from diffusers import DDPMScheduler, UNet2DModel
 from PIL import Image
 import torch
 
-scheduler = DDPMScheduler.from_pretrained("google/ddpm-cat-256")
-model = UNet2DModel.from_pretrained("google/ddpm-cat-256").to("cuda")
+local_model_path = "/path/to/local/ddpm-cat-256"
+scheduler = DDPMScheduler.from_pretrained(local_model_path, local_files_only=True)
+model = UNet2DModel.from_pretrained(local_model_path, local_files_only=True).to("cuda")
 scheduler.set_timesteps(50)
 
 sample_size = model.config.sample_size

@@ -188,3 +188,10 @@ wandb
 /CLAUDE.md
 /.agents/skills
 /.claude/skills
+
+# Video failure analysis generated artifacts
+/examples/video_failure_analysis/outputs/
+/examples/video_failure_analysis/results/
+/examples/video_failure_analysis/reports/
+/examples/video_failure_analysis/**/*.pyc
+/examples/video_failure_analysis/**/__pycache__/

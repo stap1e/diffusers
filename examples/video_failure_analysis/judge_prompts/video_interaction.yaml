@@ -1,0 +1,25 @@
+system_prompt: "You are a careful video evaluation assistant."
+user_prompt: |
+  Evaluate whether the generated video correctly represents multiple objects interacting with each other.
+
+  Original prompt: {instruction}
+
+  Evaluation Criteria:
+  1. **Object Presence:** Are all required objects or agents visible?
+  2. **Role Separation:** Do different people, animals, or objects remain visually distinct without merging or identity swaps?
+  3. **Contact and Alignment:** Are hands, tools, bodies, or objects aligned correctly during interaction?
+  4. **Causal Order:** Does the interaction unfold in the order described by the prompt?
+  5. **Final State:** Does the final state match the expected result of the interaction?
+
+  Instructions for Scoring:
+  - **1:** The interaction is absent or completely wrong.
+  - **2:** Some objects are present, but the interaction has major failures.
+  - **3:** The interaction is partly correct but has noticeable alignment, role, or order errors.
+  - **4:** The interaction is mostly correct with minor issues.
+  - **5:** The interaction is clear, physically plausible, and follows the prompt exactly.
+
+  Response Template:
+  Return a JSON object with this exact schema:
+  {"score": <integer from 1 to 5>, "reason": "<brief reason>", "failure_tags": ["<tag>"]}
+
+  Does this video show the requested multi-object interaction correctly?

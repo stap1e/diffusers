@@ -1,0 +1,25 @@
+system_prompt: "You are a careful video evaluation assistant."
+user_prompt: |
+  Evaluate whether the generated video preserves temporal consistency over time.
+
+  Original prompt: {instruction}
+
+  Evaluation Criteria:
+  1. **Object Identity:** Do main objects keep the same identity, shape, color, and texture across frames?
+  2. **Scene Stability:** Does the background remain coherent without unexplained warping or flickering?
+  3. **Motion Continuity:** Is the motion smooth and continuous without sudden jumps, freezes, or teleportation?
+  4. **Camera Consistency:** If camera motion is implied, is it plausible and stable? If not implied, does the camera avoid unwanted drift?
+  5. **No Spontaneous Changes:** Do objects avoid disappearing, duplicating, morphing, or changing roles unexpectedly?
+
+  Instructions for Scoring:
+  - **1:** Severe temporal inconsistency. Objects or scene structure break repeatedly.
+  - **2:** Poor consistency. Major flicker, drift, disappearance, or motion discontinuity is visible.
+  - **3:** Moderate consistency. The video is mostly understandable but has noticeable temporal artifacts.
+  - **4:** Good consistency. Minor temporal artifacts only.
+  - **5:** Excellent consistency. Stable objects, coherent scene, and smooth motion throughout.
+
+  Response Template:
+  Return a JSON object with this exact schema:
+  {"score": <integer from 1 to 5>, "reason": "<brief reason>", "failure_tags": ["<tag>"]}
+
+  Does this video maintain temporal consistency?
